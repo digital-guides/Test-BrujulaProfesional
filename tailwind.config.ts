@@ -61,9 +61,18 @@ export default {
           primary: "hsl(var(--brujula-primary))",
           accent: "hsl(var(--brujula-accent))",
         },
-        success: "hsl(var(--success))",
-        warning: "hsl(var(--warning))",
-        info: "hsl(var(--info))",
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--foreground))",
+        },
+        info: {
+          DEFAULT: "hsl(var(--info))",
+          foreground: "hsl(var(--foreground))",
+        },
       },
       backgroundImage: {
         'brujula-gradient': 'var(--brujula-gradient)',
