@@ -304,25 +304,25 @@ export default function TestContainer() {
                   <div className="space-y-3 text-sm">
                     <div className="flex items-start gap-3">
                       <span className="font-medium text-primary">🎯 Visión a 3 años:</span>
-                      <span className="text-xs text-muted-foreground">¿Dónde te ves profesionalmente?</span>
+                      <span className="text-sm text-muted-foreground">¿Dónde te ves profesionalmente?</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="font-medium text-primary">🚀 Visión a 5 años:</span>
-                      <span className="text-xs text-muted-foreground">¿Qué rol o posición aspiras alcanzar?</span>
+                      <span className="text-sm text-muted-foreground">¿Qué rol o posición aspiras alcanzar?</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="font-medium text-primary">💫 Impacto deseado:</span>
-                      <span className="text-xs text-muted-foreground">¿Qué tipo de impacto quieres generar?</span>
+                      <span className="text-sm text-muted-foreground">¿Qué tipo de impacto quieres generar?</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="font-medium text-primary">🏆 Reconocimiento:</span>
-                      <span className="text-xs text-muted-foreground">¿Qué reconocimiento profesional buscas?</span>
+                      <span className="text-sm text-muted-foreground">¿Qué reconocimiento profesional buscas?</span>
                     </div>
                   </div>
                   
                   <div className="mt-4 p-3 bg-white/50 rounded border border-primary/30">
-                    <p className="text-xs text-primary font-medium mb-2">🌟 Brecha entre situación actual y aspiraciones:</p>
-                    <div className="grid md:grid-cols-2 gap-2 text-xs text-primary/90">
+                    <p className="text-sm text-primary font-medium mb-2">🌟 Brecha entre situación actual y aspiraciones:</p>
+                    <div className="grid md:grid-cols-2 gap-2 text-sm text-primary/90">
                       <div>• Competencias que necesitas desarrollar</div>
                       <div>• Experiencias que necesitas adquirir</div>
                       <div>• Red profesional que necesitas construir</div>
