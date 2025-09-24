@@ -57,6 +57,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        brujula: {
+          primary: "hsl(var(--brujula-primary))",
+          accent: "hsl(var(--brujula-accent))",
+        },
+        success: "hsl(var(--success))",
+        warning: "hsl(var(--warning))",
+        info: "hsl(var(--info))",
+      },
+      backgroundImage: {
+        'brujula-gradient': 'var(--brujula-gradient)',
+        'brujula-accent-gradient': 'var(--brujula-accent-gradient)',
       },
       borderRadius: {
         lg: "var(--radius)",
