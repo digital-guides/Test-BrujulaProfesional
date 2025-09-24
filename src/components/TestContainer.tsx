@@ -273,19 +273,19 @@ export default function TestContainer() {
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
                     <div>
                       <span className="font-medium text-info-foreground">🏢 Cultura organizacional:</span>
-                      <p className="text-xs text-muted-foreground mt-1">Evalúa cómo el ambiente de tu empresa facilita o limita tu crecimiento</p>
+                      <p className="text-sm text-muted-foreground mt-1">Evalúa cómo el ambiente de tu empresa facilita o limita tu crecimiento</p>
                     </div>
                     <div>
                       <span className="font-medium text-info-foreground">🚀 Oportunidades internas:</span>
-                      <p className="text-xs text-muted-foreground mt-1">Identifica proyectos, roles o programas disponibles</p>
+                      <p className="text-sm text-muted-foreground mt-1">Identifica proyectos, roles o programas disponibles</p>
                     </div>
                     <div>
                       <span className="font-medium text-info-foreground">📈 Tendencias del mercado:</span>
-                      <p className="text-xs text-muted-foreground mt-1">Analiza las demandas futuras de tu industria</p>
+                      <p className="text-sm text-muted-foreground mt-1">Analiza las demandas futuras de tu industria</p>
                     </div>
                     <div>
                       <span className="font-medium text-info-foreground">🤝 Red profesional:</span>
-                      <p className="text-xs text-muted-foreground mt-1">Evalúa la calidad y amplitud de tus conexiones</p>
+                      <p className="text-sm text-muted-foreground mt-1">Evalúa la calidad y amplitud de tus conexiones</p>
                     </div>
                   </div>
                 </div>
