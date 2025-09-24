@@ -245,7 +245,7 @@ export default function TestContainer() {
                   </div>
                   {results.dimensionResults.filter(result => result.percentage < 70).length > 0 && (
                     <div className="mt-4 p-3 bg-background/80 rounded border border-destructive/30">
-                      <p className="text-sm text-destructive font-medium mb-2">🎯 Priorización de desarrollo:</p>
+                      <p className="text-base text-destructive font-medium mb-2">🎯 Priorización de desarrollo:</p>
                       {results.dimensionResults
                         .filter(result => result.percentage < 70)
                         .sort((a, b) => a.percentage - b.percentage)
