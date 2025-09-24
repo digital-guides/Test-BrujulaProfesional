@@ -267,25 +267,59 @@ export default function TestContainer() {
                   Análisis de Contexto Profesional Actual
                 </h3>
                 <div className="bg-info/5 border border-info/20 rounded-lg p-4">
-                  <p className="text-sm text-info-foreground/80 mb-3">
-                    Factores contextuales que influyen en tu desarrollo:
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-4 text-sm">
+                  <div className="space-y-4">
                     <div>
-                      <span className="font-medium text-info-foreground">🏢 Cultura organizacional:</span>
-                      <p className="text-sm text-muted-foreground mt-1">Evalúa cómo el ambiente de tu empresa facilita o limita tu crecimiento</p>
+                      <h4 className="text-base font-medium text-info-foreground mb-3">Mi situación profesional actual:</h4>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium mb-2">Rol actual:</label>
+                          <textarea 
+                            className="w-full min-h-[60px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="Describe tu rol actual..."
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium mb-2">Nivel jerárquico:</label>
+                          <textarea 
+                            className="w-full min-h-[60px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="Describe tu nivel jerárquico..."
+                          />
+                        </div>
+                      </div>
                     </div>
+                    
                     <div>
-                      <span className="font-medium text-info-foreground">🚀 Oportunidades internas:</span>
-                      <p className="text-sm text-muted-foreground mt-1">Identifica proyectos, roles o programas disponibles</p>
-                    </div>
-                    <div>
-                      <span className="font-medium text-info-foreground">📈 Tendencias del mercado:</span>
-                      <p className="text-sm text-muted-foreground mt-1">Analiza las demandas futuras de tu industria</p>
-                    </div>
-                    <div>
-                      <span className="font-medium text-info-foreground">🤝 Red profesional:</span>
-                      <p className="text-sm text-muted-foreground mt-1">Evalúa la calidad y amplitud de tus conexiones</p>
+                      <h4 className="text-base font-medium text-info-foreground mb-3">Factores contextuales que influyen en mi desarrollo:</h4>
+                      <div className="space-y-3">
+                        <div>
+                          <label className="block text-sm font-medium mb-2">🏢 Cultura organizacional:</label>
+                          <textarea 
+                            className="w-full min-h-[80px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="¿Cómo es la cultura de tu organización? ¿Facilita o limita tu crecimiento?"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium mb-2">🚀 Oportunidades internas:</label>
+                          <textarea 
+                            className="w-full min-h-[80px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="¿Qué proyectos, roles o programas están disponibles?"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium mb-2">📈 Tendencias del mercado:</label>
+                          <textarea 
+                            className="w-full min-h-[80px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="¿Cuáles son las demandas futuras de tu industria?"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium mb-2">🤝 Red profesional disponible:</label>
+                          <textarea 
+                            className="w-full min-h-[80px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="¿Cómo evalúas la calidad y amplitud de tus conexiones profesionales?"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -298,35 +332,73 @@ export default function TestContainer() {
                   Análisis de Aspiraciones Profesionales
                 </h3>
                 <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
-                  <p className="text-sm text-primary-foreground/80 mb-3">
-                    Tu visión profesional ideal:
-                  </p>
-                  <div className="space-y-3 text-sm">
-                    <div className="flex items-start gap-3">
-                      <span className="font-medium text-primary">🎯 Visión a 3 años:</span>
-                      <span className="text-sm text-muted-foreground">¿Dónde te ves profesionalmente?</span>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="text-base font-medium text-primary mb-3">Mi visión profesional ideal:</h4>
+                      <div className="space-y-3">
+                        <div>
+                          <label className="block text-sm font-medium mb-2">🎯 ¿Dónde me veo en 3 años?</label>
+                          <textarea 
+                            className="w-full min-h-[80px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="Describe tu visión profesional a 3 años..."
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium mb-2">🚀 ¿Dónde me veo en 5 años?</label>
+                          <textarea 
+                            className="w-full min-h-[80px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="Describe tu visión profesional a 5 años..."
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium mb-2">💫 ¿Qué tipo de impacto quiero generar?</label>
+                          <textarea 
+                            className="w-full min-h-[80px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="¿Qué impacto quieres tener en tu trabajo, equipo o industria?"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium mb-2">🏆 ¿Qué reconocimiento profesional busco?</label>
+                          <textarea 
+                            className="w-full min-h-[80px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="¿Qué tipo de reconocimiento o logros profesionales aspiras alcanzar?"
+                          />
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <span className="font-medium text-primary">🚀 Visión a 5 años:</span>
-                      <span className="text-sm text-muted-foreground">¿Qué rol o posición aspiras alcanzar?</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="font-medium text-primary">💫 Impacto deseado:</span>
-                      <span className="text-sm text-muted-foreground">¿Qué tipo de impacto quieres generar?</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="font-medium text-primary">🏆 Reconocimiento:</span>
-                      <span className="text-sm text-muted-foreground">¿Qué reconocimiento profesional buscas?</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-4 p-3 bg-white/50 rounded border border-primary/30">
-                    <p className="text-sm text-primary font-medium mb-2">🌟 Brecha entre situación actual y aspiraciones:</p>
-                    <div className="grid md:grid-cols-2 gap-2 text-sm text-primary/90">
-                      <div>• Competencias que necesitas desarrollar</div>
-                      <div>• Experiencias que necesitas adquirir</div>
-                      <div>• Red profesional que necesitas construir</div>
-                      <div>• Recursos que necesitas conseguir</div>
+                    
+                    <div>
+                      <h4 className="text-base font-medium text-primary mb-3">Brecha entre situación actual y aspiraciones:</h4>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium mb-2">Competencias que necesito desarrollar:</label>
+                          <textarea 
+                            className="w-full min-h-[80px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="¿Qué habilidades o competencias necesitas desarrollar?"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium mb-2">Experiencias que necesito adquirir:</label>
+                          <textarea 
+                            className="w-full min-h-[80px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="¿Qué experiencias o proyectos necesitas para alcanzar tus objetivos?"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium mb-2">Red profesional que necesito construir:</label>
+                          <textarea 
+                            className="w-full min-h-[80px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="¿Qué conexiones profesionales necesitas establecer?"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium mb-2">Recursos que necesito conseguir:</label>
+                          <textarea 
+                            className="w-full min-h-[80px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="¿Qué recursos, herramientas o apoyo necesitas?"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
