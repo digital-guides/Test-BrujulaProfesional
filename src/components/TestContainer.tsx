@@ -221,7 +221,7 @@ export default function TestContainer() {
                   Análisis de Brechas Críticas
                 </h3>
                 <div className="bg-destructive/5 border border-destructive/20 rounded-lg p-4">
-                  <p className="text-sm text-destructive mb-3">
+                  <p className="text-sm text-destructive font-medium mb-3">
                     Dimensiones donde obtuviste puntuación MEDIA o BAJA (priorizar desarrollo):
                   </p>
                   <div className="space-y-2">
@@ -229,7 +229,7 @@ export default function TestContainer() {
                       .filter(result => result.percentage < 70)
                       .sort((a, b) => a.percentage - b.percentage)
                       .map((result, index) => (
-                        <div key={index} className="flex items-center gap-3 text-sm">
+                        <div key={index} className="flex items-center gap-3 text-sm text-foreground">
                           <div className={`w-3 h-3 rounded-full ${
                             result.percentage < 40 ? 'bg-destructive' : 'bg-warning'
                           }`} />
@@ -244,7 +244,7 @@ export default function TestContainer() {
                       ))}
                   </div>
                   {results.dimensionResults.filter(result => result.percentage < 70).length > 0 && (
-                    <div className="mt-4 p-3 bg-white/50 rounded border border-destructive/30">
+                    <div className="mt-4 p-3 bg-background/80 rounded border border-destructive/30">
                       <p className="text-sm text-destructive font-medium mb-2">🎯 Priorización de desarrollo:</p>
                       {results.dimensionResults
                         .filter(result => result.percentage < 70)
