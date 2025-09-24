@@ -203,8 +203,8 @@ export default function TestContainer() {
                   </div>
                   {results.dimensionResults.filter(result => result.percentage >= 70).length > 0 && (
                     <div className="mt-4 p-3 bg-white/50 rounded border border-success/30">
-                      <p className="text-xs text-success-foreground font-medium mb-2">💡 Reflexión estratégica:</p>
-                      <ul className="text-xs space-y-1 text-success-foreground/90">
+                      <p className="text-sm text-success-foreground font-medium mb-2">💡 Reflexión estratégica:</p>
+                      <ul className="text-sm space-y-1 text-success-foreground/90">
                         <li>• ¿Estas fortalezas están alineadas con tus objetivos profesionales?</li>
                         <li>• ¿Cómo puedes usar estas fortalezas para compensar áreas más débiles?</li>
                         <li>• ¿Qué oportunidades puedes crear aprovechando estas fortalezas?</li>
