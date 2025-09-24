@@ -168,6 +168,169 @@ export default function TestContainer() {
             ))}
           </div>
 
+          {/* Matriz de Autorreflexión Profesional */}
+          <Card className="border-brujula-primary/20">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-brujula-primary">
+                <Compass className="h-5 w-5 text-brujula-accent" />
+                Matriz de Autorreflexión Profesional
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {/* 1. Análisis de Fortalezas Distintivas */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-brujula-primary flex items-center gap-2">
+                  <div className="w-6 h-6 bg-brujula-accent text-accent-foreground rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                  Análisis de Fortalezas Distintivas
+                </h3>
+                <div className="bg-success/5 border border-success/20 rounded-lg p-4">
+                  <p className="text-sm text-success-foreground/80 mb-3">
+                    Dimensiones donde obtuviste puntuación EXCELENTE o ALTA:
+                  </p>
+                  <div className="space-y-2">
+                    {results.dimensionResults
+                      .filter(result => result.percentage >= 70)
+                      .map((result, index) => (
+                        <div key={index} className="flex items-center gap-3 text-sm">
+                          <div className="w-3 h-3 bg-success rounded-full" />
+                          <span className="font-medium">{result.dimension}:</span>
+                          <span>{result.percentage}% - {result.level}</span>
+                        </div>
+                      ))}
+                  </div>
+                  {results.dimensionResults.filter(result => result.percentage >= 70).length > 0 && (
+                    <div className="mt-4 p-3 bg-white/50 rounded border border-success/30">
+                      <p className="text-xs text-success-foreground font-medium mb-2">💡 Reflexión estratégica:</p>
+                      <ul className="text-xs space-y-1 text-success-foreground/90">
+                        <li>• ¿Estas fortalezas están alineadas con tus objetivos profesionales?</li>
+                        <li>• ¿Cómo puedes usar estas fortalezas para compensar áreas más débiles?</li>
+                        <li>• ¿Qué oportunidades puedes crear aprovechando estas fortalezas?</li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* 2. Análisis de Brechas Críticas */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-brujula-primary flex items-center gap-2">
+                  <div className="w-6 h-6 bg-brujula-accent text-accent-foreground rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                  Análisis de Brechas Críticas
+                </h3>
+                <div className="bg-destructive/5 border border-destructive/20 rounded-lg p-4">
+                  <p className="text-sm text-destructive-foreground/80 mb-3">
+                    Dimensiones donde obtuviste puntuación MEDIA o BAJA (priorizar desarrollo):
+                  </p>
+                  <div className="space-y-2">
+                    {results.dimensionResults
+                      .filter(result => result.percentage < 70)
+                      .sort((a, b) => a.percentage - b.percentage)
+                      .map((result, index) => (
+                        <div key={index} className="flex items-center gap-3 text-sm">
+                          <div className={`w-3 h-3 rounded-full ${
+                            result.percentage < 40 ? 'bg-destructive' : 'bg-warning'
+                          }`} />
+                          <span className="font-medium">{result.dimension}:</span>
+                          <span>{result.percentage}% - {result.level}</span>
+                          <span className={`text-xs px-2 py-1 rounded ${
+                            result.percentage < 40 ? 'bg-destructive/10 text-destructive' : 'bg-warning/10 text-warning'
+                          }`}>
+                            {result.percentage < 40 ? 'Impacto Alto' : 'Impacto Medio'}
+                          </span>
+                        </div>
+                      ))}
+                  </div>
+                  {results.dimensionResults.filter(result => result.percentage < 70).length > 0 && (
+                    <div className="mt-4 p-3 bg-white/50 rounded border border-destructive/30">
+                      <p className="text-xs text-destructive-foreground font-medium mb-2">🎯 Priorización de desarrollo:</p>
+                      {results.dimensionResults
+                        .filter(result => result.percentage < 70)
+                        .sort((a, b) => a.percentage - b.percentage)
+                        .slice(0, 3)
+                        .map((result, index) => (
+                          <div key={index} className="text-xs text-destructive-foreground/90 mb-1">
+                            {index + 1}. <span className="font-medium">{result.dimension}</span> - Brecha crítica #{index + 1}
+                          </div>
+                        ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* 3. Análisis de Contexto Profesional */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-brujula-primary flex items-center gap-2">
+                  <div className="w-6 h-6 bg-brujula-accent text-accent-foreground rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                  Análisis de Contexto Profesional Actual
+                </h3>
+                <div className="bg-info/5 border border-info/20 rounded-lg p-4">
+                  <p className="text-sm text-info-foreground/80 mb-3">
+                    Factores contextuales que influyen en tu desarrollo:
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="font-medium text-info-foreground">🏢 Cultura organizacional:</span>
+                      <p className="text-xs text-muted-foreground mt-1">Evalúa cómo el ambiente de tu empresa facilita o limita tu crecimiento</p>
+                    </div>
+                    <div>
+                      <span className="font-medium text-info-foreground">🚀 Oportunidades internas:</span>
+                      <p className="text-xs text-muted-foreground mt-1">Identifica proyectos, roles o programas disponibles</p>
+                    </div>
+                    <div>
+                      <span className="font-medium text-info-foreground">📈 Tendencias del mercado:</span>
+                      <p className="text-xs text-muted-foreground mt-1">Analiza las demandas futuras de tu industria</p>
+                    </div>
+                    <div>
+                      <span className="font-medium text-info-foreground">🤝 Red profesional:</span>
+                      <p className="text-xs text-muted-foreground mt-1">Evalúa la calidad y amplitud de tus conexiones</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 4. Análisis de Aspiraciones Profesionales */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-brujula-primary flex items-center gap-2">
+                  <div className="w-6 h-6 bg-brujula-accent text-accent-foreground rounded-full flex items-center justify-center text-sm font-bold">4</div>
+                  Análisis de Aspiraciones Profesionales
+                </h3>
+                <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+                  <p className="text-sm text-primary-foreground/80 mb-3">
+                    Tu visión profesional ideal:
+                  </p>
+                  <div className="space-y-3 text-sm">
+                    <div className="flex items-start gap-3">
+                      <span className="font-medium text-primary">🎯 Visión a 3 años:</span>
+                      <span className="text-xs text-muted-foreground">¿Dónde te ves profesionalmente?</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="font-medium text-primary">🚀 Visión a 5 años:</span>
+                      <span className="text-xs text-muted-foreground">¿Qué rol o posición aspiras alcanzar?</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="font-medium text-primary">💫 Impacto deseado:</span>
+                      <span className="text-xs text-muted-foreground">¿Qué tipo de impacto quieres generar?</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="font-medium text-primary">🏆 Reconocimiento:</span>
+                      <span className="text-xs text-muted-foreground">¿Qué reconocimiento profesional buscas?</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-4 p-3 bg-white/50 rounded border border-primary/30">
+                    <p className="text-xs text-primary font-medium mb-2">🌟 Brecha entre situación actual y aspiraciones:</p>
+                    <div className="grid md:grid-cols-2 gap-2 text-xs text-primary/90">
+                      <div>• Competencias que necesitas desarrollar</div>
+                      <div>• Experiencias que necesitas adquirir</div>
+                      <div>• Red profesional que necesitas construir</div>
+                      <div>• Recursos que necesitas conseguir</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
