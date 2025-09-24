@@ -21,6 +21,9 @@ export default function TestContainer() {
 
   const currentDimensionData = testData[currentDimension];
   const currentQuestionData = currentDimensionData?.questions[currentQuestion];
+  
+  // Calcular número de pregunta total actual
+  const currentQuestionNumber = testData.slice(0, currentDimension).reduce((sum, dimension) => sum + dimension.questions.length, 0) + currentQuestion + 1;
 
   const handleAnswer = (option: string) => {
     if (!currentQuestionData) return;
@@ -383,7 +386,7 @@ export default function TestContainer() {
                 Dimensión {currentDimension + 1} de {testData.length}: {currentDimensionData.name}
               </div>
               <div className="text-lg font-semibold">
-                Pregunta {currentQuestion + 1} de {currentDimensionData.questions.length}
+                Pregunta {currentQuestionNumber} de {totalQuestions}
               </div>
             </div>
             <div className="text-right">
