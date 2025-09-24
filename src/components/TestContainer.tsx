@@ -242,13 +242,13 @@ export default function TestContainer() {
                   </div>
                   {results.dimensionResults.filter(result => result.percentage < 70).length > 0 && (
                     <div className="mt-4 p-3 bg-white/50 rounded border border-destructive/30">
-                      <p className="text-xs text-destructive-foreground font-medium mb-2">🎯 Priorización de desarrollo:</p>
+                      <p className="text-xs text-destructive font-medium mb-2">🎯 Priorización de desarrollo:</p>
                       {results.dimensionResults
                         .filter(result => result.percentage < 70)
                         .sort((a, b) => a.percentage - b.percentage)
                         .slice(0, 3)
                         .map((result, index) => (
-                          <div key={index} className="text-xs text-destructive-foreground/90 mb-1">
+                          <div key={index} className="text-xs text-destructive mb-1">
                             {index + 1}. <span className="font-medium">{result.dimension}</span> - Brecha crítica #{index + 1}
                           </div>
                         ))}
