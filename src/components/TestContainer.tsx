@@ -346,7 +346,7 @@ export default function TestContainer() {
                 {results.recommendations.map((recommendation, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-brujula-accent rounded-full mt-2 flex-shrink-0" />
-                    <span className="text-sm">{recommendation}</span>
+                    <span className="text-base">{recommendation}</span>
                   </li>
                 ))}
               </ul>
