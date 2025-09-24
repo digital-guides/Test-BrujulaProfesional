@@ -221,7 +221,7 @@ export default function TestContainer() {
                   Análisis de Brechas Críticas
                 </h3>
                 <div className="bg-destructive/5 border border-destructive/20 rounded-lg p-4">
-                  <p className="text-sm text-destructive-foreground/80 mb-3">
+                  <p className="text-sm text-destructive mb-3">
                     Dimensiones donde obtuviste puntuación MEDIA o BAJA (priorizar desarrollo):
                   </p>
                   <div className="space-y-2">
