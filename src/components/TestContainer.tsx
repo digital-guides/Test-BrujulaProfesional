@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Compass, ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
+import { Compass, ArrowLeft, ArrowRight, CheckCircle, Printer } from 'lucide-react';
 import { testData, calculateResults, type TestResult, type ComprehensiveResult } from '@/lib/test-data';
 import logo from '@/assets/logo.png';
 
@@ -61,6 +61,103 @@ export default function TestContainer() {
   const isFirstQuestion = currentDimension === 0 && currentQuestion === 0;
   const isLastQuestion = currentDimension === testData.length - 1 && 
     currentQuestion === testData[testData.length - 1].questions.length - 1;
+
+  const handlePrint = () => {
+    const printContent = document.getElementById('results-content');
+    if (!printContent) return;
+
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) return;
+
+    printWindow.document.write(`
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Resultados - Brújula de Evolución Profesional</title>
+          <style>
+            body { 
+              font-family: system-ui, -apple-system, sans-serif; 
+              line-height: 1.5; 
+              color: #000; 
+              margin: 20px;
+            }
+            .print-header { 
+              text-align: center; 
+              margin-bottom: 30px; 
+              border-bottom: 2px solid #e5e7eb; 
+              padding-bottom: 20px; 
+            }
+            .print-title { 
+              font-size: 24px; 
+              font-weight: bold; 
+              margin-bottom: 10px; 
+            }
+            .score-display { 
+              font-size: 36px; 
+              font-weight: bold; 
+              color: #059669; 
+              margin: 10px 0; 
+            }
+            .profile-card { 
+              border: 1px solid #d1d5db; 
+              border-radius: 8px; 
+              padding: 16px; 
+              margin: 16px 0; 
+            }
+            .dimension-grid { 
+              display: grid; 
+              grid-template-columns: 1fr 1fr; 
+              gap: 16px; 
+              margin: 20px 0; 
+            }
+            .dimension-card { 
+              border: 1px solid #d1d5db; 
+              border-radius: 8px; 
+              padding: 16px; 
+            }
+            .dimension-header { 
+              font-weight: bold; 
+              margin-bottom: 8px; 
+            }
+            .progress-bar { 
+              width: 100%; 
+              height: 8px; 
+              background-color: #f3f4f6; 
+              border-radius: 4px; 
+              margin: 8px 0; 
+            }
+            .progress-fill { 
+              height: 100%; 
+              background-color: #059669; 
+              border-radius: 4px; 
+            }
+            .reflection-section { 
+              page-break-inside: avoid; 
+              margin: 20px 0; 
+            }
+            @media print { 
+              body { margin: 0; } 
+              .no-print { display: none !important; } 
+            }
+          </style>
+        </head>
+        <body>
+          <div class="print-header">
+            <div class="print-title">🧭 BRÚJULA DE EVOLUCIÓN PROFESIONAL</div>
+            <div>Resultados del Test de Autodiagnóstico Integral</div>
+          </div>
+          ${printContent.innerHTML}
+        </body>
+      </html>
+    `);
+
+    printWindow.document.close();
+    printWindow.focus();
+    setTimeout(() => {
+      printWindow.print();
+      printWindow.close();
+    }, 250);
+  };
 
   if (phase === 'intro') {
     return (
@@ -131,7 +228,7 @@ export default function TestContainer() {
   if (phase === 'results' && results) {
     return (
       <div className="min-h-screen bg-background p-4">
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-4xl mx-auto space-y-6" id="results-content">
           <Card className="bg-brujula-gradient text-primary-foreground">
             <CardHeader className="text-center">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -702,7 +799,15 @@ export default function TestContainer() {
           )}
 
 
-          <div className="flex justify-center">
+          <div className="flex justify-center gap-4 no-print">
+            <Button 
+              onClick={handlePrint}
+              variant="outline"
+              className="border-brujula-accent text-brujula-accent hover:bg-brujula-accent hover:text-accent-foreground"
+            >
+              <Printer className="mr-2 h-4 w-4" />
+              Imprimir Resultados
+            </Button>
             <Button 
               onClick={() => {
                 setPhase('intro');
