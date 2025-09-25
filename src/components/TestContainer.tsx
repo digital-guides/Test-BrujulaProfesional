@@ -334,7 +334,7 @@ export default function TestContainer() {
                   <div className="space-y-4">
                     <div>
                       <h4 className="text-base font-medium text-info-foreground mb-3">Mi situación profesional actual:</h4>
-                      <div className="grid md:grid-cols-3 gap-4">
+                      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                         <div>
                           <label className="block text-sm font-medium mb-2">Rol actual:</label>
                           <textarea 
@@ -354,6 +354,13 @@ export default function TestContainer() {
                           <textarea 
                             className="w-full min-h-[60px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
                             placeholder="Describe tu nivel jerárquico..."
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium mb-2">Años de experiencia:</label>
+                          <textarea 
+                            className="w-full min-h-[60px] p-3 border border-border rounded-md resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="Indica tus años de experiencia..."
                           />
                         </div>
                       </div>
