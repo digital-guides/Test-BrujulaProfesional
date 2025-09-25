@@ -413,6 +413,143 @@ export default function TestContainer() {
             </CardContent>
           </Card>
 
+          {/* 5. Estrategias de Desarrollo Profesional */}
+          {results.dimensionResults.some(result => result.percentage < 70) && (
+            <Card className="border-brujula-accent/30">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-brujula-primary">
+                  <div className="w-6 h-6 bg-brujula-accent text-accent-foreground rounded-full flex items-center justify-center text-sm font-bold">5</div>
+                  ESTRATEGIAS DE DESARROLLO PROFESIONAL
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  Plan de Acción Personalizado basado en tus áreas de oportunidad
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {results.dimensionResults
+                  .filter(result => result.percentage < 70)
+                  .sort((a, b) => a.percentage - b.percentage)
+                  .map((result, index) => {
+                    // Estrategias específicas por dimensión
+                    const strategies = {
+                      1: { // Autoconocimiento Profesional
+                        title: "FORTALECIMIENTO DEL AUTOCONOCIMIENTO",
+                        color: "bg-blue-50 border-blue-200",
+                        actions: [
+                          "Realizar evaluaciones 360° con colegas y supervisores",
+                          "Llevar un diario de reflexión profesional diario",
+                          "Definir tu declaración de propósito profesional por escrito",
+                          "Crear un mapa de valores personales y profesionales",
+                          "Establecer sesiones mensuales de autoevaluación"
+                        ]
+                      },
+                      2: { // Competencias Técnicas y Especializadas  
+                        title: "FORTALECIMIENTO DE COMPETENCIAS TÉCNICAS",
+                        color: "bg-green-50 border-green-200",
+                        actions: [
+                          "Identificar 3 competencias técnicas clave para tu rol futuro",
+                          "Inscribirse en cursos/certificaciones relevantes en los próximos 6 meses",
+                          "Buscar proyectos que requieran nuevas habilidades técnicas",
+                          "Establecer mentoría con expertos en tu área",
+                          "Dedicar 2 horas semanales a aprendizaje técnico estructurado"
+                        ]
+                      },
+                      3: { // Habilidades Interpersonales y Liderazgo
+                        title: "DESARROLLO DE HABILIDADES DE LIDERAZGO",
+                        color: "bg-purple-50 border-purple-200",
+                        actions: [
+                          "Solicitar feedback 360° sobre habilidades interpersonales",
+                          "Liderar un proyecto o iniciativa en los próximos 3 meses",
+                          "Practicar técnicas de comunicación y presentación",
+                          "Buscar oportunidades de mentoría o coaching a otros",
+                          "Participar en actividades de networking profesional"
+                        ]
+                      },
+                      4: { // Adaptabilidad y Gestión del Cambio
+                        title: "FORTALECIMIENTO DE LA ADAPTABILIDAD",
+                        color: "bg-orange-50 border-orange-200",
+                        actions: [
+                          "Voluntariarse para proyectos de cambio organizacional",
+                          "Desarrollar técnicas de manejo del estrés y resiliencia",
+                          "Practicar la toma de decisiones en situaciones de incertidumbre",
+                          "Establecer una red de apoyo profesional para momentos difíciles",
+                          "Crear un plan personal de gestión del cambio"
+                        ]
+                      },
+                      5: { // Pensamiento Estratégico y Visión de Negocio
+                        title: "DESARROLLO DEL PENSAMIENTO ESTRATÉGICO",
+                        color: "bg-indigo-50 border-indigo-200",
+                        actions: [
+                          "Estudiar el plan estratégico organizacional y tu industria",
+                          "Participar en comités de planificación estratégica",
+                          "Desarrollar análisis de escenarios para tu área",
+                          "Establecer reuniones regulares con líderes senior",
+                          "Crear propuestas de mejora con impacto organizacional"
+                        ]
+                      }
+                    };
+
+                    const dimensionStrategy = strategies[result.dimension.includes("Autoconocimiento") ? 1 : 
+                      result.dimension.includes("Competencias Técnicas") ? 2 :
+                      result.dimension.includes("Interpersonales") ? 3 :
+                      result.dimension.includes("Adaptabilidad") ? 4 : 5];
+
+                    return (
+                      <div key={index} className={`p-4 rounded-lg border ${dimensionStrategy.color}`}>
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <h4 className="text-lg font-semibold text-foreground mb-1">
+                              ESTRATEGIA {index + 1}: {dimensionStrategy.title}
+                            </h4>
+                            <p className="text-sm text-muted-foreground">
+                              Para profesionales con puntuación baja en: <span className="font-medium">{result.dimension}</span> ({result.percentage}%)
+                            </p>
+                          </div>
+                          <div className={`px-3 py-1 rounded-full text-xs font-medium ${
+                            result.percentage < 40 ? 'bg-red-100 text-red-700' : 'bg-yellow-100 text-yellow-700'
+                          }`}>
+                            Prioridad {result.percentage < 40 ? 'Alta' : 'Media'}
+                          </div>
+                        </div>
+
+                        <div className="space-y-3">
+                          <h5 className="font-medium text-foreground">PLAN DE ACCIÓN PERSONALIZADO:</h5>
+                          <ul className="space-y-2">
+                            {dimensionStrategy.actions.map((action, actionIndex) => (
+                              <li key={actionIndex} className="flex items-start gap-3">
+                                <div className="w-6 h-6 bg-brujula-accent text-accent-foreground rounded-full flex items-center justify-center text-xs font-bold mt-0.5">
+                                  {actionIndex + 1}
+                                </div>
+                                <span className="text-sm text-foreground flex-1">{action}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          
+                          <div className="mt-4 p-3 bg-white/60 rounded border">
+                            <p className="text-sm font-medium text-foreground mb-2">📅 Cronograma sugerido:</p>
+                            <div className="grid grid-cols-3 gap-2 text-xs">
+                              <div className="text-center p-2 bg-brujula-accent/10 rounded">
+                                <div className="font-medium">Semanas 1-2</div>
+                                <div className="text-muted-foreground">Diagnóstico y planificación</div>
+                              </div>
+                              <div className="text-center p-2 bg-brujula-accent/10 rounded">
+                                <div className="font-medium">Meses 1-3</div>
+                                <div className="text-muted-foreground">Implementación inicial</div>
+                              </div>
+                              <div className="text-center p-2 bg-brujula-accent/10 rounded">
+                                <div className="font-medium">Meses 4-6</div>
+                                <div className="text-muted-foreground">Consolidación y evaluación</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </CardContent>
+            </Card>
+          )}
+
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
