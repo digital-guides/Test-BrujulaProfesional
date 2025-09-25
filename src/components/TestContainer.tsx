@@ -145,6 +145,70 @@ export default function TestContainer() {
             </CardHeader>
           </Card>
 
+          {/* Perfil Profesional */}
+          <Card className="border-brujula-primary/20">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-brujula-primary">
+                <Compass className="h-5 w-5 text-brujula-accent" />
+                Tu Perfil Profesional
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {results.totalPercentage >= 85 && (
+                  <div className="bg-gradient-to-r from-yellow-50 to-amber-50 border border-yellow-200 rounded-lg p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">🏆</span>
+                      <h3 className="text-lg font-bold text-yellow-800">EXCELENCIA PROFESIONAL (85-100 puntos)</h3>
+                    </div>
+                    <p className="text-sm text-yellow-700 mb-2"><strong>Perfil:</strong> Líder profesional consolidado con alta competencia integral</p>
+                    <p className="text-sm text-yellow-700"><strong>Características:</strong> Dominio excepcional en todas las dimensiones, reconocimiento como referente</p>
+                  </div>
+                )}
+                {results.totalPercentage >= 70 && results.totalPercentage < 85 && (
+                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">⭐</span>
+                      <h3 className="text-lg font-bold text-blue-800">ALTO DESARROLLO (70-84 puntos)</h3>
+                    </div>
+                    <p className="text-sm text-blue-700 mb-2"><strong>Perfil:</strong> Profesional sólido con competencias bien desarrolladas</p>
+                    <p className="text-sm text-blue-700"><strong>Características:</strong> Fortalezas claras en la mayoría de áreas, listo para roles de mayor responsabilidad</p>
+                  </div>
+                )}
+                {results.totalPercentage >= 55 && results.totalPercentage < 70 && (
+                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">📈</span>
+                      <h3 className="text-lg font-bold text-green-800">DESARROLLO MEDIO (55-69 puntos)</h3>
+                    </div>
+                    <p className="text-sm text-green-700 mb-2"><strong>Perfil:</strong> Profesional en crecimiento con potencial identificable</p>
+                    <p className="text-sm text-green-700"><strong>Características:</strong> Competencias básicas sólidas, áreas específicas por fortalecer</p>
+                  </div>
+                )}
+                {results.totalPercentage >= 40 && results.totalPercentage < 55 && (
+                  <div className="bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 rounded-lg p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">🔧</span>
+                      <h3 className="text-lg font-bold text-orange-800">DESARROLLO INICIAL (40-54 puntos)</h3>
+                    </div>
+                    <p className="text-sm text-orange-700 mb-2"><strong>Perfil:</strong> Profesional junior o en transición con fundamentos por consolidar</p>
+                    <p className="text-sm text-orange-700"><strong>Características:</strong> Competencias emergentes, necesita desarrollo estructurado</p>
+                  </div>
+                )}
+                {results.totalPercentage < 40 && (
+                  <div className="bg-gradient-to-r from-red-50 to-rose-50 border border-red-200 rounded-lg p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">⚠️</span>
+                      <h3 className="text-lg font-bold text-red-800">DESARROLLO CRÍTICO (Menos de 40 puntos)</h3>
+                    </div>
+                    <p className="text-sm text-red-700 mb-2"><strong>Perfil:</strong> Profesional con necesidades urgentes de desarrollo</p>
+                    <p className="text-sm text-red-700"><strong>Características:</strong> Requiere intervención inmediata y plan de desarrollo integral</p>
+                  </div>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+
           <div className="grid md:grid-cols-2 gap-4">
             {results.dimensionResults.map((result, index) => (
               <Card key={index} className="relative">
