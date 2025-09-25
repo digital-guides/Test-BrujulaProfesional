@@ -514,9 +514,18 @@ export const calculateResults = (answers: Record<number, string>): Comprehensive
     };
   });
 
+  // Sistema de ponderación por dimensiones
+  const dimensionWeights = [0.25, 0.20, 0.25, 0.15, 0.15]; // D1: 25%, D2: 20%, D3: 25%, D4: 15%, D5: 15%
+  
   const totalScore = dimensionResults.reduce((sum, result) => sum + result.score, 0);
-  const totalPossible = Object.keys(answers).length * 4;
-  const totalPercentage = totalPossible > 0 ? Math.round((totalScore / totalPossible) * 100) : 0;
+  
+  // Cálculo del puntaje ponderado total
+  let weightedTotal = 0;
+  dimensionResults.forEach((result, index) => {
+    weightedTotal += result.percentage * dimensionWeights[index];
+  });
+  
+  const totalPercentage = Math.round(weightedTotal);
 
   let overallLevel = "";
   if (totalPercentage >= 85) overallLevel = "Profesional Excepcional";
