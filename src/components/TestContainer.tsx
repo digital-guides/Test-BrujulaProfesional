@@ -430,72 +430,117 @@ export default function TestContainer() {
                   .filter(result => result.percentage < 70)
                   .sort((a, b) => a.percentage - b.percentage)
                   .map((result, index) => {
-                    // Estrategias según documento original - mapeo por dimensión específica
+                    // Estrategias según documento original - mapeo exacto por dimensión
                     const strategiesByDimension = {
-                      // Dimensión 1: Autoconocimiento Profesional
+                      // Dimensión 1: CONSTRUCCIÓN DE AUTOCONOCIMIENTO Y MARCA PERSONAL
                       1: {
-                        strategyNumber: 2,
-                        title: "FORTALECIMIENTO DEL AUTOCONOCIMIENTO",
+                        title: "CONSTRUCCIÓN DE AUTOCONOCIMIENTO Y MARCA PERSONAL",
                         color: "bg-blue-50 border-blue-200",
-                        actions: [
-                          "Realizar evaluaciones 360° con colegas y supervisores",
-                          "Llevar un diario de reflexión profesional diario", 
-                          "Definir tu declaración de propósito profesional por escrito",
-                          "Crear un mapa de valores personales y profesionales",
-                          "Establecer sesiones mensuales de autoevaluación"
+                        immediateActions: [
+                          "Realizar evaluaciones de personalidad y competencias",
+                          "Definir valores y propósito profesional claro",
+                          "Solicitar feedback honesto de supervisores y pares",
+                          "Iniciar práctica regular de autorreflexión"
+                        ],
+                        mediumTermActions: [
+                          "Trabajar con coach profesional o mentor",
+                          "Desarrollar plan de marca personal consistente",
+                          "Crear presencia profesional en redes sociales",
+                          "Documentar logros y aprendizajes sistemáticamente"
+                        ],
+                        longTermActions: [
+                          "Establecer reputación sólida en tu área de expertise",
+                          "Participar como speaker en eventos profesionales",
+                          "Publicar contenido de valor en tu área",
+                          "Construir network estratégico alineado con tu marca"
                         ]
                       },
-                      // Dimensión 2: Competencias Técnicas y Especializadas - ESTRATEGIA 1 del documento
+                      // Dimensión 2: FORTALECIMIENTO DE COMPETENCIAS TÉCNICAS
                       2: {
-                        strategyNumber: 1,
                         title: "FORTALECIMIENTO DE COMPETENCIAS TÉCNICAS",
                         color: "bg-green-50 border-green-200",
-                        actions: [
-                          "Identificar 3 competencias técnicas clave para tu rol futuro",
-                          "Inscribirse en cursos/certificaciones relevantes en los próximos 6 meses",
-                          "Buscar proyectos que requieran nuevas habilidades técnicas",
-                          "Establecer mentoría con expertos en tu área", 
-                          "Dedicar 2 horas semanales a aprendizaje técnico estructurado"
+                        immediateActions: [
+                          "Realizar diagnóstico técnico específico de tu área",
+                          "Inscribirte en 1-2 cursos de actualización prioritarios",
+                          "Identificar mentor técnico interno o externo",
+                          "Crear plan de estudio semanal de 5 horas mínimo"
+                        ],
+                        mediumTermActions: [
+                          "Obtener certificaciones relevantes para tu área",
+                          "Participar en proyectos que requieran nuevas competencias",
+                          "Asistir a conferencias y eventos especializados",
+                          "Crear contenido técnico (blogs, presentaciones) para solidificar aprendizaje"
+                        ],
+                        longTermActions: [
+                          "Posicionarte como referente técnico interno",
+                          "Obtener certificaciones avanzadas o especialización",
+                          "Contribuir a comunidades profesionales de tu área",
+                          "Considerar roles que requieran mayor expertise técnico"
                         ]
                       },
-                      // Dimensión 3: Habilidades Interpersonales y Liderazgo
+                      // Dimensión 3: DESARROLLO DE LIDERAZGO E INFLUENCIA
                       3: {
-                        strategyNumber: 3,
-                        title: "DESARROLLO DE HABILIDADES DE LIDERAZGO",
+                        title: "DESARROLLO DE LIDERAZGO E INFLUENCIA",
                         color: "bg-purple-50 border-purple-200",
-                        actions: [
+                        immediateActions: [
                           "Solicitar feedback 360° sobre habilidades interpersonales",
-                          "Liderar un proyecto o iniciativa en los próximos 3 meses",
-                          "Practicar técnicas de comunicación y presentación",
-                          "Buscar oportunidades de mentoría o coaching a otros",
-                          "Participar en actividades de networking profesional"
+                          "Buscar oportunidades de liderar proyectos pequeños",
+                          "Inscribirse en programa de desarrollo de liderazgo",
+                          "Practicar comunicación asertiva en reuniones"
+                        ],
+                        mediumTermActions: [
+                          "Asumir mentoría de colegas junior",
+                          "Liderar iniciativas de mejora en tu equipo",
+                          "Desarrollar habilidades de presentación y facilitación",
+                          "Construir red de aliados dentro de la organización"
+                        ],
+                        longTermActions: [
+                          "Buscar roles con responsabilidades de liderazgo",
+                          "Participar en comités o grupos de decisión",
+                          "Desarrollar programa de mentoría estructurado",
+                          "Considerar educación formal en liderazgo (MBA, etc.)"
                         ]
                       },
-                      // Dimensión 4: Adaptabilidad y Gestión del Cambio
+                      // Dimensión 4: DESARROLLO DE AGILIDAD Y ADAPTABILIDAD
                       4: {
-                        strategyNumber: 4,
-                        title: "FORTALECIMIENTO DE LA ADAPTABILIDAD",
+                        title: "DESARROLLO DE AGILIDAD Y ADAPTABILIDAD",
                         color: "bg-orange-50 border-orange-200",
-                        actions: [
-                          "Voluntariarse para proyectos de cambio organizacional",
-                          "Desarrollar técnicas de manejo del estrés y resiliencia",
-                          "Practicar la toma de decisiones en situaciones de incertidumbre",
-                          "Establecer una red de apoyo profesional para momentos difíciles",
-                          "Crear un plan personal de gestión del cambio"
+                        immediateActions: [
+                          "Practicar técnicas de manejo de estrés y mindfulness",
+                          "Buscar activamente proyectos fuera de tu zona de confort",
+                          "Desarrollar mentalidad de crecimiento a través de lectura",
+                          "Implementar rutinas de aprendizaje continuo"
+                        ],
+                        mediumTermActions: [
+                          "Tomar roles en proyectos de transformación o cambio",
+                          "Aprender metodologías ágiles y de innovación",
+                          "Practicar resolución de problemas complejos",
+                          "Desarrollar tolerancia a la ambigüedad mediante exposición gradual"
+                        ],
+                        longTermActions: [
+                          "Buscar roles que requieran gestión de cambio",
+                          "Convertirse en agente de cambio en tu organización",
+                          "Desarrollar expertise en transformación digital o innovación",
+                          "Considerar experiencias internacionales o cross-funcionales"
                         ]
                       },
-                      // Dimensión 5: Pensamiento Estratégico y Visión de Negocio
+                      // Dimensión 5: DESARROLLO DE PENSAMIENTO ESTRATÉGICO
                       5: {
-                        strategyNumber: 5,
-                        title: "DESARROLLO DEL PENSAMIENTO ESTRATÉGICO",
+                        title: "DESARROLLO DE PENSAMIENTO ESTRATÉGICO",
                         color: "bg-indigo-50 border-indigo-200",
-                        actions: [
-                          "Estudiar el plan estratégico organizacional y tu industria",
-                          "Participar en comités de planificación estratégica",
-                          "Desarrollar análisis de escenarios para tu área",
-                          "Establecer reuniones regulares con líderes senior",
-                          "Crear propuestas de mejora con impacto organizacional"
-                        ]
+                        immediateActions: [
+                          "Estudiar el plan estratégico y modelo de negocio de tu organización",
+                          "Practicar análisis de causa-efecto en decisiones diarias",
+                          "Comenzar a pensar en métricas e impacto de tu trabajo",
+                          "Buscar mentores con experiencia en roles estratégicos"
+                        ],
+                        mediumTermActions: [
+                          "Participar en proyectos de planificación estratégica",
+                          "Desarrollar habilidades de análisis de datos y tendencias",
+                          "Proponer iniciativas que generen valor organizacional",
+                          "Estudiar casos de negocio y estrategia empresarial"
+                        ],
+                        longTermActions: []
                       }
                     };
 
@@ -512,7 +557,7 @@ export default function TestContainer() {
                         <div className="flex items-start justify-between mb-3">
                           <div>
                             <h4 className="text-lg font-semibold text-foreground mb-1">
-                              ESTRATEGIA {dimensionStrategy.strategyNumber}: {dimensionStrategy.title}
+                              ESTRATEGIA {dimensionNumber}: {dimensionStrategy.title}
                             </h4>
                             <p className="text-sm text-muted-foreground">
                               Para profesionales con puntuación baja en: <span className="font-medium">{result.dimension}</span> ({result.percentage}%)
@@ -525,36 +570,49 @@ export default function TestContainer() {
                           </div>
                         </div>
 
-                        <div className="space-y-3">
+                        <div className="space-y-4">
                           <h5 className="font-medium text-foreground">PLAN DE ACCIÓN PERSONALIZADO:</h5>
-                          <ul className="space-y-2">
-                            {dimensionStrategy.actions.map((action, actionIndex) => (
-                              <li key={actionIndex} className="flex items-start gap-3">
-                                <div className="w-6 h-6 bg-brujula-accent text-accent-foreground rounded-full flex items-center justify-center text-xs font-bold mt-0.5">
-                                  {actionIndex + 1}
-                                </div>
-                                <span className="text-sm text-foreground flex-1">{action}</span>
-                              </li>
-                            ))}
-                          </ul>
                           
-                          <div className="mt-4 p-3 bg-white/60 rounded border">
-                            <p className="text-sm font-medium text-foreground mb-2">📅 Cronograma sugerido:</p>
-                            <div className="grid grid-cols-3 gap-2 text-xs">
-                              <div className="text-center p-2 bg-brujula-accent/10 rounded">
-                                <div className="font-medium">Semanas 1-2</div>
-                                <div className="text-muted-foreground">Diagnóstico y planificación</div>
-                              </div>
-                              <div className="text-center p-2 bg-brujula-accent/10 rounded">
-                                <div className="font-medium">Meses 1-3</div>
-                                <div className="text-muted-foreground">Implementación inicial</div>
-                              </div>
-                              <div className="text-center p-2 bg-brujula-accent/10 rounded">
-                                <div className="font-medium">Meses 4-6</div>
-                                <div className="text-muted-foreground">Consolidación y evaluación</div>
-                              </div>
-                            </div>
+                          {/* Acciones Inmediatas */}
+                          <div>
+                            <h6 className="font-medium text-sm text-brujula-primary mb-2">Acciones Inmediatas (0-3 meses):</h6>
+                            <ul className="space-y-2">
+                              {dimensionStrategy.immediateActions.map((action, actionIndex) => (
+                                <li key={actionIndex} className="flex items-start gap-3">
+                                  <div className="w-2 h-2 bg-brujula-accent rounded-full mt-2 flex-shrink-0"></div>
+                                  <span className="text-sm text-foreground">{action}</span>
+                                </li>
+                              ))}
+                            </ul>
                           </div>
+
+                          {/* Acciones de Mediano Plazo */}
+                          <div>
+                            <h6 className="font-medium text-sm text-brujula-primary mb-2">Acciones de Mediano Plazo (3-12 meses):</h6>
+                            <ul className="space-y-2">
+                              {dimensionStrategy.mediumTermActions.map((action, actionIndex) => (
+                                <li key={actionIndex} className="flex items-start gap-3">
+                                  <div className="w-2 h-2 bg-brujula-accent rounded-full mt-2 flex-shrink-0"></div>
+                                  <span className="text-sm text-foreground">{action}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {/* Acciones de Largo Plazo */}
+                          {dimensionStrategy.longTermActions.length > 0 && (
+                            <div>
+                              <h6 className="font-medium text-sm text-brujula-primary mb-2">Acciones de Largo Plazo (1-2 años):</h6>
+                              <ul className="space-y-2">
+                                {dimensionStrategy.longTermActions.map((action, actionIndex) => (
+                                  <li key={actionIndex} className="flex items-start gap-3">
+                                    <div className="w-2 h-2 bg-brujula-accent rounded-full mt-2 flex-shrink-0"></div>
+                                    <span className="text-sm text-foreground">{action}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
                         </div>
                       </div>
                     );
