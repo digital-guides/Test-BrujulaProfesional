@@ -491,18 +491,18 @@ export const calculateResults = (answers: Record<number, string>): Comprehensive
     let level = "";
     let description = "";
 
-    if (percentage >= 85) {
-      level = "Excelente";
-      description = "Nivel óptimo con fortalezas consolidadas";
-    } else if (percentage >= 70) {
-      level = "Bueno";
-      description = "Buen nivel con algunas áreas de mejora";
-    } else if (percentage >= 55) {
-      level = "Regular";
-      description = "Nivel básico que requiere desarrollo";
+    if (percentage >= 90) {
+      level = "EXCELENTE";
+      description = "Fortaleza distintiva - Mantener y aprovechar";
+    } else if (percentage >= 75) {
+      level = "ALTO";
+      description = "Competencia sólida - Optimizar para excelencia";
+    } else if (percentage >= 60) {
+      level = "MEDIO";
+      description = "Área de mejora prioritaria - Desarrollar sistemáticamente";
     } else {
-      level = "Necesita Mejora";
-      description = "Requiere atención prioritaria y plan de desarrollo";
+      level = "BAJO";
+      description = "Área crítica - Intervención urgente necesaria";
     }
 
     return {

@@ -218,16 +218,25 @@ export default function TestContainer() {
                 <CardContent>
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">{result.description}</span>
-                      <span className="font-semibold">{result.percentage}%</span>
+                      <span className="font-semibold text-lg">{result.level}</span>
+                      <span className="font-bold text-xl">{result.percentage}%</span>
                     </div>
-                    <Progress value={result.percentage} className="h-2" />
-                    <div className={`text-sm font-medium ${
-                      result.percentage >= 85 ? 'text-success' :
-                      result.percentage >= 70 ? 'text-info' :
-                      result.percentage >= 55 ? 'text-warning' : 'text-destructive'
+                    <Progress value={result.percentage} className="h-3" />
+                    <div className={`p-3 rounded-lg border ${
+                      result.percentage >= 90 ? 'bg-emerald-50 border-emerald-200 text-emerald-800' :
+                      result.percentage >= 75 ? 'bg-blue-50 border-blue-200 text-blue-800' :
+                      result.percentage >= 60 ? 'bg-amber-50 border-amber-200 text-amber-800' : 
+                      'bg-red-50 border-red-200 text-red-800'
                     }`}>
-                      {result.level}
+                      <div className="text-sm font-medium mb-1">
+                        {result.percentage >= 90 ? '🏆 Perfil: Fortaleza distintiva' :
+                         result.percentage >= 75 ? '⭐ Perfil: Competencia sólida' :
+                         result.percentage >= 60 ? '📈 Perfil: Área de mejora prioritaria' :
+                         '⚠️ Perfil: Área crítica'}
+                      </div>
+                      <div className="text-xs">
+                        {result.description}
+                      </div>
                     </div>
                   </div>
                 </CardContent>
