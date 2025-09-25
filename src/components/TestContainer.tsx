@@ -430,31 +430,37 @@ export default function TestContainer() {
                   .filter(result => result.percentage < 70)
                   .sort((a, b) => a.percentage - b.percentage)
                   .map((result, index) => {
-                    // Estrategias específicas por dimensión
-                    const strategies = {
-                      1: { // Autoconocimiento Profesional
+                    // Estrategias según documento original - mapeo por dimensión específica
+                    const strategiesByDimension = {
+                      // Dimensión 1: Autoconocimiento Profesional
+                      1: {
+                        strategyNumber: 2,
                         title: "FORTALECIMIENTO DEL AUTOCONOCIMIENTO",
                         color: "bg-blue-50 border-blue-200",
                         actions: [
                           "Realizar evaluaciones 360° con colegas y supervisores",
-                          "Llevar un diario de reflexión profesional diario",
+                          "Llevar un diario de reflexión profesional diario", 
                           "Definir tu declaración de propósito profesional por escrito",
                           "Crear un mapa de valores personales y profesionales",
                           "Establecer sesiones mensuales de autoevaluación"
                         ]
                       },
-                      2: { // Competencias Técnicas y Especializadas  
+                      // Dimensión 2: Competencias Técnicas y Especializadas - ESTRATEGIA 1 del documento
+                      2: {
+                        strategyNumber: 1,
                         title: "FORTALECIMIENTO DE COMPETENCIAS TÉCNICAS",
                         color: "bg-green-50 border-green-200",
                         actions: [
                           "Identificar 3 competencias técnicas clave para tu rol futuro",
                           "Inscribirse en cursos/certificaciones relevantes en los próximos 6 meses",
                           "Buscar proyectos que requieran nuevas habilidades técnicas",
-                          "Establecer mentoría con expertos en tu área",
+                          "Establecer mentoría con expertos en tu área", 
                           "Dedicar 2 horas semanales a aprendizaje técnico estructurado"
                         ]
                       },
-                      3: { // Habilidades Interpersonales y Liderazgo
+                      // Dimensión 3: Habilidades Interpersonales y Liderazgo
+                      3: {
+                        strategyNumber: 3,
                         title: "DESARROLLO DE HABILIDADES DE LIDERAZGO",
                         color: "bg-purple-50 border-purple-200",
                         actions: [
@@ -465,7 +471,9 @@ export default function TestContainer() {
                           "Participar en actividades de networking profesional"
                         ]
                       },
-                      4: { // Adaptabilidad y Gestión del Cambio
+                      // Dimensión 4: Adaptabilidad y Gestión del Cambio
+                      4: {
+                        strategyNumber: 4,
                         title: "FORTALECIMIENTO DE LA ADAPTABILIDAD",
                         color: "bg-orange-50 border-orange-200",
                         actions: [
@@ -476,7 +484,9 @@ export default function TestContainer() {
                           "Crear un plan personal de gestión del cambio"
                         ]
                       },
-                      5: { // Pensamiento Estratégico y Visión de Negocio
+                      // Dimensión 5: Pensamiento Estratégico y Visión de Negocio
+                      5: {
+                        strategyNumber: 5,
                         title: "DESARROLLO DEL PENSAMIENTO ESTRATÉGICO",
                         color: "bg-indigo-50 border-indigo-200",
                         actions: [
@@ -489,17 +499,20 @@ export default function TestContainer() {
                       }
                     };
 
-                    const dimensionStrategy = strategies[result.dimension.includes("Autoconocimiento") ? 1 : 
+                    // Obtener la dimensión numérica para mapear correctamente
+                    const dimensionNumber = result.dimension.includes("Autoconocimiento") ? 1 : 
                       result.dimension.includes("Competencias Técnicas y Especializadas") ? 2 :
                       result.dimension.includes("Habilidades Interpersonales") ? 3 :
-                      result.dimension.includes("Adaptabilidad") ? 4 : 5];
+                      result.dimension.includes("Adaptabilidad") ? 4 : 5;
+                    
+                    const dimensionStrategy = strategiesByDimension[dimensionNumber];
 
                     return (
                       <div key={index} className={`p-4 rounded-lg border ${dimensionStrategy.color}`}>
                         <div className="flex items-start justify-between mb-3">
                           <div>
                             <h4 className="text-lg font-semibold text-foreground mb-1">
-                              ESTRATEGIA {index + 1}: {dimensionStrategy.title}
+                              ESTRATEGIA {dimensionStrategy.strategyNumber}: {dimensionStrategy.title}
                             </h4>
                             <p className="text-sm text-muted-foreground">
                               Para profesionales con puntuación baja en: <span className="font-medium">{result.dimension}</span> ({result.percentage}%)
