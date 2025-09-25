@@ -490,8 +490,8 @@ export default function TestContainer() {
                     };
 
                     const dimensionStrategy = strategies[result.dimension.includes("Autoconocimiento") ? 1 : 
-                      result.dimension.includes("Competencias Técnicas") ? 2 :
-                      result.dimension.includes("Interpersonales") ? 3 :
+                      result.dimension.includes("Competencias Técnicas y Especializadas") ? 2 :
+                      result.dimension.includes("Habilidades Interpersonales") ? 3 :
                       result.dimension.includes("Adaptabilidad") ? 4 : 5];
 
                     return (
