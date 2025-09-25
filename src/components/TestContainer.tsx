@@ -563,24 +563,6 @@ export default function TestContainer() {
             </Card>
           )}
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-brujula-accent" />
-                Recomendaciones Personalizadas
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-3">
-                {results.recommendations.map((recommendation, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-brujula-accent rounded-full mt-2 flex-shrink-0" />
-                    <span className="text-base">{recommendation}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
 
           <div className="flex justify-center">
             <Button 
