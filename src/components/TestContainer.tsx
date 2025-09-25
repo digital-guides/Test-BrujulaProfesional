@@ -414,7 +414,7 @@ export default function TestContainer() {
           </Card>
 
           {/* 5. Estrategias de Desarrollo Profesional */}
-          {results.dimensionResults.some(result => result.percentage < 70) && (
+          {results.dimensionResults.some(result => result.percentage < 60) && (
             <Card className="border-brujula-accent/30">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-brujula-primary">
@@ -427,7 +427,7 @@ export default function TestContainer() {
               </CardHeader>
               <CardContent className="space-y-6">
                 {results.dimensionResults
-                  .filter(result => result.percentage < 70)
+                  .filter(result => result.percentage < 60)
                   .sort((a, b) => a.percentage - b.percentage)
                   .map((result, index) => {
                     // Estrategias según documento original - mapeo exacto por dimensión
